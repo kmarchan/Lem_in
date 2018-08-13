@@ -6,25 +6,25 @@
 #    By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 13:53:38 by kmarchan          #+#    #+#              #
-#    Updated: 2018/08/13 09:05:54 by kmarchan         ###   ########.fr        #
+#    Updated: 2018/08/13 13:41:40 by kmarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=	push_swap
+NAME=	lem-in.c
 
 INCLUDES= -I ./libft_gnl/includes
 
-all:	$(NAME1)
+all:	$(NAME)
 
 lib: 
 	make re -C ./libft_gnl/
 
 
-SRC= 
+SRC= lem_in.c 
 
 
 
-OBJ2=	$(SRC:.c=.o)
+OBJ=	$(SRC:.c=.o)
 
 $(NAME):
 	gcc -Wall -Werror -Wextra -c $(SRC) $(INCLUDES)
