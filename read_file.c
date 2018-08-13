@@ -4,8 +4,13 @@
 
 void	read_file(char *ar[], t_lem *lem)
 {
-	char *buf;
+	char	*read;
+	int		lin;
+	int		ret;	
 
-	get_next_line(lem->fd, &buf);
-	while ()
+	lin = 0;
+	while (get_next_line(lem->fd, &read) > 0)
+	{
+		
+	}
 }
