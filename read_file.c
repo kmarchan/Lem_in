@@ -69,7 +69,7 @@ void	vec_in(t_vec *vec)
 		ft_putendl_fd("H", 2);
 		// vec->ar = ar_dup(vec->ar, temp, vec->cap);
 		temp = (char **)ft_memalloc(sizeof(char *) * vec->cap);
-		while (i <= vec->size)
+		while (i < vec->size)
 		{
 			temp[i] = ft_strdup(vec->ar[i]);
 			i++;
