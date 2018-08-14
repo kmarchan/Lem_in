@@ -38,4 +38,7 @@ typedef struct			s_lem
 	t_vec				*vec;
 }						t_lem;
 
+void	free_ar(char **ar, int n);
+void	read_file(t_lem *lem);
+
 #endif

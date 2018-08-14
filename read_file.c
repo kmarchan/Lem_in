@@ -25,12 +25,13 @@ char	**ar_dup(char **new, char **old, int n)
 		new[i] = ft_strdup(old[i]);
 		i++;
 	}
+	return (new);
 }
 
-char	*vec_in(t_vec *vec)
+void	vec_in(t_vec *vec)
 {
 	char **temp;
-	// int i;
+	int i;
 
 	if (vec->size == 0)
 	{
@@ -39,43 +40,43 @@ char	*vec_in(t_vec *vec)
 	}
 	if (vec->size == vec->cap - 1)
 	{
-		temp = ar_dup(temp, vec->ar, vec->cap);
-		// temp = (char **)ft_memalloc(sizeof(char *) * vec->cap);
-		// i = 0;
-		// while (i <= vec->size)
-		// {
-		// 	temp[i] = ft_strdup(vec->ar[i]);
-		// 	i++;
-		// }
-		free_ar(vec->ar);
-		vec->cap *= 2;
-		vec->ar = ar_dup(vec->ar, )
-		temp = (char **)ft_memalloc(sizeof(char *) * vec->cap);
+		// temp = ar_dup(temp, vec->ar, vec->cap);
 		i = 0;
+		temp = (char **)ft_memalloc(sizeof(char *) * vec->cap);
 		while (i <= vec->size)
 		{
 			temp[i] = ft_strdup(vec->ar[i]);
 			i++;
 		}
-		free_ar(temp);
+		free_ar(vec->ar, vec->cap);
+		vec->cap *= 2;
+		i = 0;
+		// vec->ar = ar_dup(vec->ar, temp, vec->cap);
+		temp = (char **)ft_memalloc(sizeof(char *) * vec->cap);
+		while (i <= vec->size)
+		{
+			temp[i] = ft_strdup(vec->ar[i]);
+			i++;
+		}
+		free_ar(temp, vec->size);
 	}
 }
 
-void	read_file(char *ar[], t_lem *lem)
+void	read_file(t_lem *lem)
 {
 	char	*read;
 	int		lin;
-	int		ret;
+	// int		ret;
 
 	lin = 0;
 	while (get_next_line(lem->fd, &read) > 0)
 	{
 		if (lem->vec->size == lem->vec->cap)
 		{
-			lem->vec = vec_in(lem->vec);
+			vec_in(lem->vec);
 		}
-		lem->vec->ar[lin] = ft_strdup(read);
-		lin++;
+		lem->vec->ar[lem->vec->size] = ft_strdup(read);
+		lem->vec->size += 1;
 		ft_strclr(read);
 	}
 }

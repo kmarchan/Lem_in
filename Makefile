@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=	lem-in.c
+NAME=	lem-in
 
 INCLUDES= -I ./libft_gnl/includes
 
@@ -20,7 +20,7 @@ lib:
 	make re -C ./libft_gnl/
 
 
-SRC= lem_in.c 
+SRC= lem_in.c read_file.c memory_man.c 
 
 
 

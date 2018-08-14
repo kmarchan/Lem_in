@@ -11,20 +11,52 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
+#include "libft.h"
 
-void	initialise(t_lem *lem)
+t_lem	*initialise(void)
 {
-	lem = (t_lem *)memaloc(sizeof(t_lem));
+	t_lem *lem;
+
+	lem = (t_lem *)ft_memalloc(sizeof(t_lem));
+	lem->vec = (t_vec *)ft_memalloc(sizeof(t_vec));
+	if (!lem)
+	{
+		return (NULL);
+	}
 	lem->fd = 0;
 	lem->ant = 0;
 	lem->vec->size = 0;
 	lem->vec->cap = 0;
+	return (lem);
 }
 
-int		main()
+int		main(void)
 {
 	t_lem *lem;
-	initialise(lem);
+
+	ft_putstr_fd("MAIN", 2);
+	lem = initialise();
+	// lem = (t_lem *)ft_memalloc(sizeof(t_lem));
+	// if (!lem)
+	// {
+	// 	return (0);
+	// }
+	// lem->fd = 0;
+	// lem->ant = 0;
+	// ft_putstr_fd("B", 2);
+	// lem->vec = (t_vec *)ft_memalloc(sizeof(t_vec));
+	// lem->vec->size = 0;
+	// ft_putstr_fd("C", 2);
+	// lem->vec->cap = 0;
+	// ft_putstr_fd("C", 2);
+	// ft_putstr_fd("1", 2);
+	read_file(lem);
+	int n = 0;
+	while (n <= lem->vec->cap)
+	{
+		ft_putendl(lem->vec(n));
+		n++;
+	}
 	free(lem);
-	exit(0);
+	exit(1);
 }

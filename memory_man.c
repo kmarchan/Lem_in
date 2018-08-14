@@ -11,20 +11,19 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "checker.h"
 #include <stdlib.h>
 
-void	bzero_array(char **ar, int n)
-{
-	int line;
+// void	bzero_array(char **ar, int n)
+// {
+// 	int line;
 
-	line = 0;
-	while (line < n)
-	{
-		ft_bzero(ar[line], n);
-		line++;
-	}
-}
+// 	line = 0;
+// 	while (line < n)
+// 	{
+// 		ft_bzero(ar[line], n);
+// 		line++;
+// 	}
+// }
 
 void	free_ar(char **ar, int n)
 {
@@ -38,9 +37,9 @@ void	free_ar(char **ar, int n)
 	}
 }
 
-void	free_stack(t_stack *stack)
-{
-	if (stack->next)
-		free_stack(stack->next);
-	free(stack);
-}
+// void	free_stack(t_stack *stack)
+// {
+// 	if (stack->next)
+// 		free_stack(stack->next);
+// 	free(stack);
+// }
