@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   memory_man.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/14 09:35:54 by kmarchan         ###   ########.fr       */
+/*   Created: 2018/08/06 08:21:39 by kmarchan          #+#    #+#             */
+/*   Updated: 2018/08/10 13:01:46 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM_IN_H
-# define LEM_IN_H
-# define ERROR ft_putendl_fd("Error", 2);
-# include "libft.h"
-# include "get_next_line.h"
+#include "libft.h"
+#include "checker.h"
+#include <stdlib.h>
 
-typedef struct			s_vec
+void	bzero_array(char **ar, int n)
 {
-	int					size;
-	int					cap;
-	char				**ar;
-}						t_vec;
+	int line;
 
-typedef struct			s_lst
+	line = 0;
+	while (line < n)
+	{
+		ft_bzero(ar[line], n);
+		line++;
+	}
+}
+
+void	free_ar(char **ar, int n)
 {
-	char				*data;
-	struct s_lst		*next;
-	char				**link;
-}						t_lst;
+	int e;
 
-typedef struct			s_lem
+	e = 0;
+	while (e < n)
+	{
+		free(ar[e]);
+		e++;
+	}
+}
+
+void	free_stack(t_stack *stack)
 {
-	int					fd;
-	int					ant;
-	t_lst				lst;
-	t_vec				*vec;
-}						t_lem;
-
-#endif
+	if (stack->next)
+		free_stack(stack->next);
+	free(stack);
+}
