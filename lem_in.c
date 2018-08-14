@@ -34,7 +34,7 @@ int		main(void)
 {
 	t_lem *lem;
 
-	ft_putstr_fd("MAIN", 2);
+	// ft_putstr_fd("MAIN", 2);
 	lem = initialise();
 	// lem = (t_lem *)ft_memalloc(sizeof(t_lem));
 	// if (!lem)
@@ -51,12 +51,12 @@ int		main(void)
 	// ft_putstr_fd("C", 2);
 	// ft_putstr_fd("1", 2);
 	read_file(lem);
-	int n = 0;
-	while (n <= lem->vec->cap)
-	{
-		ft_putendl(lem->vec(n));
-		n++;
-	}
+	// int n = 0;
+	// while (n <= lem->vec->cap)
+	// {
+	// 	ft_putendl(lem->vec->ar[n]);
+	// 	n++;
+	// }
 	free(lem);
 	exit(1);
 }
