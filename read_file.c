@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:19:33 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 10:40:50 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 18:39:28 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,16 @@ void	read_file(t_lem *lem)
 	free(read);
 	lem->vec->ar[lem->vec->size] = NULL;
 }
+
+int		analyze(t_lem *lem)
+{
+	get_rooms(lem);
+	get_ants(lem);
+	find_begend(lem);
+	ft_putstr_fd("start = ", 2);
+	ft_putendl_fd(lem->start, 2);
+	ft_putstr_fd("end = ", 2);
+	ft_putendl_fd(lem->end, 2);
+	return (0);
+}
+

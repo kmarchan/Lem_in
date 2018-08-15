@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 10:38:29 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 18:36:58 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ void	free_all(t_lem *lem)
 	free(lem);
 }
 
+int		errors(t_lem *lem)
+{
+	if (lem->ant < 1 || lem->end == NULL || lem->start == NULL)
+		return (1);
+	return (0);
+}
+
 int		main(void)
 {
 	int		n;
@@ -45,12 +52,21 @@ int		main(void)
 
 	lem = initialise();
 	read_file(lem);
-	n = 0;
-	while (lem->vec->ar[n] != NULL)
+	get_ants(lem);
+	ft_putnbr_fd(lem->ant, 2);
+	ft_putchar_fd('\n', 2);
+	analyze(lem);
+	if (errors(lem))
 	{
-		ft_putendl(lem->vec->ar[n]);
-		n++;
+		ERROR;
+		exit(0);
 	}
-	free_all(lem);
+	n = 0;
+	// while (lem->vec->ar[n] != NULL)
+	// {
+	// 	ft_putendl(lem->vec->ar[n]);
+	// 	n++;
+	// }
+	// // free_all(lem);
 	exit(1);
 }

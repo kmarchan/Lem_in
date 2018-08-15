@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_ants.c                                         :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/13 13:39:24 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 18:38:58 by kmarchan         ###   ########.fr       */
+/*   Created: 2018/08/15 10:47:34 by kmarchan          #+#    #+#             */
+/*   Updated: 2018/08/15 10:54:32 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
+#include <string.h>
 #include "libft.h"
 
-void	get_ants(t_lem *lem)
+size_t	ft_word_count(char const *s)
 {
-	int	i;
+	size_t		w;
+	size_t		i;
 
+	w = 0;
 	i = 0;
-	if (ft_word_count(lem->vec->ar[i]) == 1 && is_all_digit(lem->vec->ar[i]))
+	if (!s)
+		return (0);
+	if (!ft_isspace(s[i]))
+		w++;
+	while (s[i] != '\0')
 	{
-		lem->ant = (ft_atoi(lem->vec->ar[i]));
+		if (ft_isspace(s[i]) && !ft_isspace(s[i + 1]) && s[i + 1] != '\0')
+			w++;
+		i++;
 	}
+	return (w);
 }

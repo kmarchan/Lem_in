@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 09:11:45 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 14:58:56 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct			s_lem
 {
 	int					fd;
 	int					ant;
+	char				*start;
+	char				*end;
 	t_lst				lst;
 	t_vec				*vec;
 }						t_lem;
@@ -44,5 +46,9 @@ void					free_lst(t_lst *lst);
 void					free_ar(char **ar, int n);
 void					free_ar(char **ar, int n);
 void					read_file(t_lem *lem);
+void					get_ants(t_lem *lem);
+void					find_begend(t_lem *lem);
+char					*set_point(char *lin);
+int						analyze(t_lem *lem);
 
 #endif

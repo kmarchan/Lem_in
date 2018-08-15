@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:15:52 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/13 09:23:48 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 13:56:32 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_chrcount(const char *s, char c);
 void	sort_int_tab(int *tab, size_t n);
+size_t	ft_word_count(char const *s);
+int		is_all_digit(char *str);
 
 #endif

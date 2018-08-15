@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_ants.c                                         :+:      :+:    :+:   */
+/*   ft_is_all_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/13 13:39:24 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 18:38:58 by kmarchan         ###   ########.fr       */
+/*   Created: 2018/08/15 13:54:18 by kmarchan          #+#    #+#             */
+/*   Updated: 2018/08/15 13:55:33 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
 #include "libft.h"
 
-void	get_ants(t_lem *lem)
+int		is_all_digit(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (ft_word_count(lem->vec->ar[i]) == 1 && is_all_digit(lem->vec->ar[i]))
+	while (str[i] != '\0')
 	{
-		lem->ant = (ft_atoi(lem->vec->ar[i]));
+		if (!ft_isdigit(str[i]) && !ft_isspace(str[i]) && str[i] != '-')
+			return (0);
+		i++;
 	}
+	return (1);
 }
