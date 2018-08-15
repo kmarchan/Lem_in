@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/14 09:35:54 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 09:11:45 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,11 @@ typedef struct			s_lem
 	t_vec				*vec;
 }						t_lem;
 
-void	free_ar(char **ar, int n);
-void	read_file(t_lem *lem);
+t_lem					*initialise(void);
+void					free_all(t_lem *lem);
+void					free_lst(t_lst *lst);
+void					free_ar(char **ar, int n);
+void					free_ar(char **ar, int n);
+void					read_file(t_lem *lem);
 
 #endif

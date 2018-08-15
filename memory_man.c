@@ -6,10 +6,11 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 08:21:39 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/10 13:01:46 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 09:31:40 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "lem_in.h"
 #include "libft.h"
 #include <stdlib.h>
 
@@ -35,11 +36,12 @@ void	free_ar(char **ar, int n)
 		free(ar[e]);
 		e++;
 	}
+	free(ar);
 }
 
-// void	free_stack(t_stack *stack)
-// {
-// 	if (stack->next)
-// 		free_stack(stack->next);
-// 	free(stack);
-// }
+void	free_lst(t_lst *lst)
+{
+	if (lst->next)
+		free_lst(lst->next);
+	free(lst);
+}

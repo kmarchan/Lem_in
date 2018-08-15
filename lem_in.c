@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/14 08:55:19 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 10:38:29 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,27 @@ t_lem	*initialise(void)
 	return (lem);
 }
 
+void	free_all(t_lem *lem)
+{
+	free_ar(lem->vec->ar, lem->vec->cap);
+	free(lem->vec);
+	// free_lst(&lem->lst);
+	free(lem);
+}
+
 int		main(void)
 {
-	t_lem *lem;
+	int		n;
+	t_lem	*lem;
 
-	// ft_putstr_fd("MAIN", 2);
 	lem = initialise();
-	// lem = (t_lem *)ft_memalloc(sizeof(t_lem));
-	// if (!lem)
-	// {
-	// 	return (0);
-	// }
-	// lem->fd = 0;
-	// lem->ant = 0;
-	// ft_putstr_fd("B", 2);
-	// lem->vec = (t_vec *)ft_memalloc(sizeof(t_vec));
-	// lem->vec->size = 0;
-	// ft_putstr_fd("C", 2);
-	// lem->vec->cap = 0;
-	// ft_putstr_fd("C", 2);
-	// ft_putstr_fd("1", 2);
 	read_file(lem);
-	// int n = 0;
-	// while (n <= lem->vec->cap)
-	// {
-	// 	ft_putendl(lem->vec->ar[n]);
-	// 	n++;
-	// }
-	free(lem);
+	n = 0;
+	while (lem->vec->ar[n] != NULL)
+	{
+		ft_putendl(lem->vec->ar[n]);
+		n++;
+	}
+	free_all(lem);
 	exit(1);
 }
