@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:13 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 18:47:45 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 19:13:02 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,35 @@ void	find_begend(t_lem *lem)
 
 void	get_rooms(t_lem *lem)
 {
-	int i;
+	int		i;
+	char	**temp;
 
 	i = 0;
 	lem->lst = ft_lstnew();
 	while (lem->vec->ar[i] != NULL)
 	{
-		if (ft_word_count(lem->vec->ar[i + 1]) == 3 && lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
-
+		if (ft_word_count(lem->vec->ar[i]) == 3 &&
+		lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
+		{
+			if (lem->vec->ar[i + 1] != NULL)
+				lem->lst->next = ft_lstnew();
+			temp = ft_split(lem->vec->ar[i]);
+			lem->lst->name = ft_strdup(temp[0]);
+			free_ar(temp, 3);
+		}
+		i++;
 	}
 }
+
+// while (che->ar[e] != NULL)
+// 	{
+// 		if (ft_atoi(che->ar[e]) < -217478368 || ft_atoi(che->ar[e]) > 217478367)
+// 		{
+// 			return (0);
+// 		}
+// 		if (che->ar[e + 1] != NULL)
+// 			che->la->next = ft_intlstnew();
+// 		che->la->data = (ft_atoi(che->ar[e]));
+// 		che->la = che->la->next;
+// 		e++;
+// 	}

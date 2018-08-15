@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 14:58:56 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 19:11:23 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ typedef struct			s_vec
 
 typedef struct			s_lst
 {
-	char				*data;
+	int					lnum;
+	char				*name;
 	struct s_lst		*next;
-	char				**link;
+	t_vec				*link;
 }						t_lst;
 
 typedef struct			s_lem
@@ -36,7 +37,7 @@ typedef struct			s_lem
 	int					ant;
 	char				*start;
 	char				*end;
-	t_lst				lst;
+	t_lst				*lst;
 	t_vec				*vec;
 }						t_lem;
 
@@ -50,5 +51,8 @@ void					get_ants(t_lem *lem);
 void					find_begend(t_lem *lem);
 char					*set_point(char *lin);
 int						analyze(t_lem *lem);
+int						ft_lstlen(t_lst *lst);
+t_lst					*ft_lstnew(void);
+void					get_rooms(t_lem *lem);
 
 #endif

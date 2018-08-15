@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 18:36:58 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/15 19:15:25 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ int		main(void)
 		exit(0);
 	}
 	n = 0;
+	while (lem->lst)
+	{
+		ft_putendl_fd(lem->lst->name, 2);
+		lem->lst = lem->lst->next;
+	}
 	// while (lem->vec->ar[n] != NULL)
 	// {
 	// 	ft_putendl(lem->vec->ar[n]);
