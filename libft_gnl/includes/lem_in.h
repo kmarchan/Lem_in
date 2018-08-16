@@ -34,7 +34,7 @@ typedef struct			s_vec
 
 typedef struct			s_lst
 {
-	// int					lnum;
+	int					lnum;
 	char				*name;
 	struct s_lst		*next;
 	t_vec				*lnk;

@@ -49,7 +49,7 @@ int		errors(t_lem *lem)
 
 int		main(void)
 {
-	int		n;
+	// int		n;
 	t_lem	*lem;
 
 	lem = initialise();
@@ -61,7 +61,7 @@ int		main(void)
 		ERROR;
 		exit(0);
 	}
-	n = 0;
+	// n = 0;
 	
 	// while (lem->vec->ar[n] != NULL)
 	// {
