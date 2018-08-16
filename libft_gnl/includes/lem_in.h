@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 19:11:23 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 09:01:39 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 # define ERROR ft_putendl_fd("Error", 2);
 # include "libft.h"
 # include "get_next_line.h"
+
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define YEL   "\x1B[33m"
+#define BLU   "\x1B[34m"
+#define MAG   "\x1B[35m"
+#define CYN   "\x1B[36m"
+#define WHT   "\x1B[37m"
+#define RESET "\x1B[0m"
 
 typedef struct			s_vec
 {
@@ -54,5 +63,6 @@ int						analyze(t_lem *lem);
 int						ft_lstlen(t_lst *lst);
 t_lst					*ft_lstnew(void);
 void					get_rooms(t_lem *lem);
+void					del_extra(t_lst *lst);
 
 #endif

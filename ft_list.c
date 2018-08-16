@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 07:39:19 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 19:11:08 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 08:59:07 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,21 @@ int			acending(int a, int b)
 	return (a <= b);
 }
 
-// void		del_extra(t_lst *lst)
-// {
-// 	t_lst *tmp;
+void		del_extra(t_lst *lst)
+{
+	t_lst *tmp;
+	t_lst *fre;
 
-// 	tmp = lst;
-// 	while (tmp)
-// 	{
-// 		if (tmp->next->norm < 0)
-// 			tmp->next = NULL;
-// 		tmp = tmp->next;
-// 	}
-// 	free(tmp);
-// }
+	tmp = lst;
+	while (tmp)
+	{
+		if (tmp->next->name == NULL)
+		{
+			fre = tmp->next;
+			tmp->next = NULL;
+		}
+		tmp = tmp->next;
+	}
+	free(fre);
+	free(tmp);
+}

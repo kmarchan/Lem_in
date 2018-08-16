@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:19:33 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 18:39:28 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 09:07:11 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,19 @@ int		analyze(t_lem *lem)
 	get_rooms(lem);
 	get_ants(lem);
 	find_begend(lem);
-	ft_putstr_fd("start = ", 2);
+	ft_putstr_fd(CYN "ants = " RESET, 2);
+	ft_putnbr_fd(lem->ant, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd(CYN "start = " RESET, 2);
 	ft_putendl_fd(lem->start, 2);
-	ft_putstr_fd("end = ", 2);
+	ft_putstr_fd(CYN "end = " RESET, 2);
+	ft_putendl_fd(lem->end, 2);
+	ft_putendl_fd(CYN "ROOMS:" RESET, 2);
+	while (lem->lst != NULL)
+	{
+		ft_putendl_fd(lem->lst->name, 2);
+		lem->lst = lem->lst->next;
+	}
 	ft_putendl_fd(lem->end, 2);
 	return (0);
 }

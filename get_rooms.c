@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:13 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 19:13:02 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 09:03:13 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,33 +59,28 @@ void	get_rooms(t_lem *lem)
 {
 	int		i;
 	char	**temp;
+	t_lst	*hold;
+	t_lst	*hold2;
 
 	i = 0;
-	lem->lst = ft_lstnew();
+	hold = lem->lst;
+	hold = ft_lstnew();
+	hold2 = hold;
 	while (lem->vec->ar[i] != NULL)
 	{
-		if (ft_word_count(lem->vec->ar[i]) == 3 &&
-		lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
+		if (ft_word_count(lem->vec->ar[i]) == 3 && lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
 		{
 			if (lem->vec->ar[i + 1] != NULL)
-				lem->lst->next = ft_lstnew();
+			{
+				hold->next = ft_lstnew();
+			}
 			temp = ft_split(lem->vec->ar[i]);
-			lem->lst->name = ft_strdup(temp[0]);
+			hold->name = ft_strdup(temp[0]);
+			hold = hold->next;
 			free_ar(temp, 3);
 		}
 		i++;
 	}
+	lem->lst = hold2;
+	del_extra(lem->lst);
 }
-
-// while (che->ar[e] != NULL)
-// 	{
-// 		if (ft_atoi(che->ar[e]) < -217478368 || ft_atoi(che->ar[e]) > 217478367)
-// 		{
-// 			return (0);
-// 		}
-// 		if (che->ar[e + 1] != NULL)
-// 			che->la->next = ft_intlstnew();
-// 		che->la->data = (ft_atoi(che->ar[e]));
-// 		che->la = che->la->next;
-// 		e++;
-// 	}
