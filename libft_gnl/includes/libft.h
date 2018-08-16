@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:15:52 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 13:56:32 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 12:06:45 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_strsplit(char const *s, char c);
 char	**ft_split(char *s);
+char	**ft_split_c(char *s, char c);
 char	**ft_strarr(char const *s, char **dest, char c, size_t w);
 size_t	ft_intlen(int n);
 size_t	ft_strlen(const char *s);

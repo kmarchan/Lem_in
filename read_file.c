@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:19:33 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 09:59:29 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 13:06:22 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,18 @@ int		analyze(t_lem *lem)
 	ft_putstr_fd(CYN "end = " RESET, 2);
 	ft_putendl_fd(lem->end, 2);
 	ft_putendl_fd(CYN "ROOMS:" RESET, 2);
+	int i;
 	while (lem->lst != NULL)
 	{
+		i = 0;
 		ft_putendl_fd(lem->lst->name, 2);
+		while (i < lem->lst->lnk->size)
+		{
+			ft_putstr_fd(lem->lst->lnk->ar[i], 2);
+			ft_putchar_fd(' ', 2);
+			i++;
+		}
+		ft_putchar_fd('\n', 2);
 		lem->lst = lem->lst->next;
 	}
 	ft_putendl_fd(lem->end, 2);

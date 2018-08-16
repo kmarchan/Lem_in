@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 08:21:39 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/15 09:31:40 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 13:11:48 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ void	free_ar(char **ar, int n)
 void	free_lst(t_lst *lst)
 {
 	if (lst->next)
+	{
+		free_ar(lst->lnk->ar, lst->lnk->cap);
+		free(lst->lnk);
 		free_lst(lst->next);
+	}
+	// free_ar(lst->lnk->ar, lst->lnk->cap);
+	// free(lst->lnk);
 	free(lst);
 }

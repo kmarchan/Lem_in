@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 09:06:41 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/16 13:35:49 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	free_all(t_lem *lem)
 {
 	free_ar(lem->vec->ar, lem->vec->cap);
 	free(lem->vec);
-	// free_lst(&lem->lst);
+	// free_ar(lem->lst->lnk->ar);
+	free_lst(lem->lst);
+	free(lem->lst);
 	free(lem);
 }
 
