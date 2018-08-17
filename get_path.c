@@ -59,14 +59,14 @@ void	find_path(t_lem *lem, int n)
 
 void	get_path(t_lem *lem)
 {
-	int n;
+	// int n;
 
-	n = 2;
+	// n = 2;
 	(void)lem;
 	find_first_step(lem);
-	while (lem->brek == 0)
-	{
-		find_path(lem, n);
-		n++;
-	}
+	// while (lem->brek == 0)
+	// {
+	// 	find_path(lem, n);
+	// 	n++;
+	// }
 }

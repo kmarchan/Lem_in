@@ -55,10 +55,15 @@ int		main(void)
 	// int		n;
 
 	lem = initialise();
+	// ft_putendl_fd("B", 2);
 	read_file(lem);
+	// ft_putendl_fd("C", 2);
 	get_ants(lem);
+	// ft_putendl_fd("D", 2);
 	analyze(lem);
+	// ft_putendl_fd("E", 2);
 	get_path(lem);
+	// ft_putendl_fd("F", 2);
 	if (errors(lem))
 	{
 		ERROR;

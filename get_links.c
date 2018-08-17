@@ -14,17 +14,39 @@
 #include "libft.h"
 #include <string.h>
 
+void	dup_link(t_lem *lem, char *nam, char *link)
+{
+	t_lst *tmp;
+
+	tmp = lem->lst;
+	// ft_putendl_fd(tmp->name, 2);
+	// ft_putendl_fd(link, 2);
+	while (ft_strcmp(tmp->name, link) && tmp)
+	{
+		tmp = tmp->next;
+	}
+	if (ft_strcmp(tmp->name, link) == 0)
+	{
+		if (tmp->lnk->size == tmp->lnk->cap)
+		{
+			vec_in(tmp->lnk);
+		}
+		tmp->lnk->ar[tmp->lnk->size] = ft_strdup(nam);
+		(tmp->lnk->size)++;
+	}
+}
+
 void	split_set(t_lst *tmp, char *lin)
 {
 	char	**spl;
 
 	spl = ft_split_c(lin, '-');
-	while (ft_strcmp(tmp->name, spl[0]))
+	while (ft_strcmp(tmp->name, spl[0]) && tmp)
 	{
 		tmp = tmp->next;
 	}
 	if (ft_strcmp(tmp->name, spl[0]) == 0)
-	{
+	{	
 		if (tmp->lnk->size == tmp->lnk->cap)
 		{
 			vec_in(tmp->lnk);
@@ -48,6 +70,10 @@ void	get_links(t_lem *lem)
 		ft_strchr(lem->vec->ar[i], '-') && lem->vec->ar[i][0] != '#')
 		{
 			split_set(tmp, lem->vec->ar[i]);
+			// ft_putendl_fd("H", 2);
+			// dup_link(lem, tmp->lnk->ar[tmp->lnk->size - 1], tmp->name);
+			dup_link(lem, tmp->name, tmp->lnk->ar[tmp->lnk->size - 1]);
+			// ft_putendl_fd("I", 2);
 		}
 		i++;
 	}
