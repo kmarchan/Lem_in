@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 09:46:44 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/17 10:29:31 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct			s_lem
 {
 	int					fd;
 	int					ant;
+	int					brek;
 	char				*start;
 	char				*end;
 	t_lst				*lst;
@@ -68,5 +69,8 @@ t_lst					*ft_lstnew(void);
 void					get_rooms(t_lem *lem);
 void					del_extra(t_lst *lst);
 void					get_links(t_lem *lem);
+void					find_first_step(t_lem *lem);
+void					find_path(t_lem *lem, int n);
+void					get_path(t_lem *lem);
 
 #endif

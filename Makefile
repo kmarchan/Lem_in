@@ -6,7 +6,7 @@
 #    By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 13:53:38 by kmarchan          #+#    #+#              #
-#    Updated: 2018/08/16 09:29:02 by kmarchan         ###   ########.fr        #
+#    Updated: 2018/08/17 10:28:37 by kmarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ lib:
 
 
 SRC= lem_in.c read_file.c memory_man.c get_ants.c get_rooms.c ft_list.c vector.c \
-	get_links.c
+	get_links.c get_path.c
 
 
 
