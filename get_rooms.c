@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:13 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 09:03:13 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/17 07:30:40 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,11 @@ void	get_rooms(t_lem *lem)
 	hold2 = hold;
 	while (lem->vec->ar[i] != NULL)
 	{
-		if (ft_word_count(lem->vec->ar[i]) == 3 && lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
+		if (ft_word_count(lem->vec->ar[i]) == 3 &&
+		lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
 		{
 			if (lem->vec->ar[i + 1] != NULL)
-			{
 				hold->next = ft_lstnew();
-			}
 			temp = ft_split(lem->vec->ar[i]);
 			hold->name = ft_strdup(temp[0]);
 			hold = hold->next;

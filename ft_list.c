@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 07:39:19 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 10:31:31 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/17 07:25:17 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_lst		*ft_lstnew(void)
 	{
 		return (NULL);
 	}
-	// new->lnum = 0;
+	new->lnum = 0;
 	new->name = NULL;
 	new->next = NULL;
 	new->lnk = (t_vec *)malloc(sizeof(t_vec));

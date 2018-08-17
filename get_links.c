@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:41 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 13:02:40 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/17 09:15:31 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	get_links(t_lem *lem)
 	tmp->lnk->ar[tmp->lnk->size] = NULL;
 }
 
-void	find_route(t_lem *lem)
-{
+// void	find_route(t_lem *lem)
+// {
 	
-}
+// }

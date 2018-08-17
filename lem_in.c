@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/16 13:35:49 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/17 08:22:48 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int		errors(t_lem *lem)
 
 int		main(void)
 {
-	// int		n;
 	t_lem	*lem;
+	// int		n;
 
 	lem = initialise();
 	read_file(lem);
