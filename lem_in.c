@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/17 12:20:03 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/18 16:28:15 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		main(void)
 	// ft_putendl_fd("D", 2);
 	analyze(lem);
 	// ft_putendl_fd("E", 2);
-	get_path(lem);
+	// get_path(lem);
 	// ft_putendl_fd("F", 2);
 	if (errors(lem))
 	{
@@ -79,15 +79,15 @@ int		main(void)
 	ft_putendl_fd(lem->end, 2);
 	ft_putendl_fd(CYN "ROOMS:" RESET, 2);
 	hold = lem->lst;
-	while (lem->lst != NULL)
+	while (lem->lst)
 	{
 		i = 0;
 		ft_putstr_fd(CYN, 2);
 		ft_putendl_fd(lem->lst->name, 2);
 		ft_putstr_fd(RESET, 2);
-		ft_putstr_fd(MAG, 2);
-		ft_putnbr_fd(lem->lst->lnum, 2);
-		ft_putstr_fd(RESET, 2);
+		// ft_putstr_fd(MAG, 2);
+		// ft_putnbr_fd(lem->lst->lnum, 2);
+		// ft_putstr_fd(RESET, 2);
 		while (i < lem->lst->lnk->size)
 		{
 			ft_putstr_fd(lem->lst->lnk->ar[i], 2);
@@ -97,7 +97,7 @@ int		main(void)
 		ft_putchar_fd('\n', 2);
 		lem->lst = lem->lst->next;
 	}
-	ft_putendl_fd(lem->end, 2);
+	// ft_putendl_fd(lem->end, 2);
 	lem->lst = hold;
 	// n = 0;
 	
