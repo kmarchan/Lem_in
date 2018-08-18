@@ -14,6 +14,20 @@
 #include "libft.h"
 #include <string.h>
 
+int		duplicates(char *nam, char **ar, int n)
+{
+	int i;
+
+	i = 0;
+	while(i < n)
+	{
+		if (ft_strcmp(ar[i], nam) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	dup_link(t_lem *lem, char *nam, char *link)
 {
 	t_lst *tmp;
@@ -25,7 +39,7 @@ void	dup_link(t_lem *lem, char *nam, char *link)
 	{
 		tmp = tmp->next;
 	}
-	if (ft_strcmp(tmp->name, link) == 0)
+	if (duplicates(nam, tmp->lnk->ar, tmp->lnk->size))
 	{
 		if (tmp->lnk->size == tmp->lnk->cap)
 		{
@@ -72,7 +86,8 @@ void	split_set(t_lst *lst, char *lin, t_lem *lem)
 	{
 		tmp = tmp->next;
 	}
-	if (ft_strcmp(tmp->name, spl[0]) == 0)
+	// if (ft_strcmp(tmp->name, spl[0]) == 0)
+	if (duplicates(spl[1], tmp->lnk->ar, tmp->lnk->size))
 	{
 		if (tmp->lnk->size == tmp->lnk->cap)
 		{
