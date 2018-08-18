@@ -38,6 +38,7 @@ int		analyze(t_lem *lem)
 	get_ants(lem);
 	find_begend(lem);
 	get_links(lem);
+	get_path(lem);
 	// ft_putstr_fd(CYN "ants = " RESET, 2);
 	// ft_putnbr_fd(lem->ant, 2);
 	// ft_putchar_fd('\n', 2);

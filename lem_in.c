@@ -84,9 +84,9 @@ int		main(void)
 		ft_putstr_fd(CYN, 2);
 		ft_putendl_fd(lem->lst->name, 2);
 		ft_putstr_fd(RESET, 2);
-		// ft_putstr_fd(MAG, 2);
-		// ft_putnbr_fd(lem->lst->lnum, 2);
-		// ft_putstr_fd(RESET, 2);
+		ft_putstr_fd(MAG, 2);
+		ft_putnbr_fd(lem->lst->lnum, 2);
+		ft_putstr_fd(RESET, 2);
 		while (i < lem->lst->lnk->size)
 		{
 			ft_putstr_fd(lem->lst->lnk->ar[i], 2);
