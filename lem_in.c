@@ -55,7 +55,6 @@ int		main(void)
 	// int		n;
 
 	lem = initialise();
-	// ft_putendl_fd("B", 2);
 	read_file(lem);
 	// ft_putendl_fd("C", 2);
 	get_ants(lem);

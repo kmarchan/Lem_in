@@ -21,7 +21,7 @@ void	dup_link(t_lem *lem, char *nam, char *link)
 	tmp = lem->lst;
 	// ft_putendl_fd(tmp->name, 2);
 	// ft_putendl_fd(link, 2);
-	while (ft_strcmp(tmp->name, link) == 1 && tmp->next)
+	while (ft_strcmp(tmp->name, link) != 0 && tmp->next)
 	{
 		tmp = tmp->next;
 	}
@@ -35,12 +35,37 @@ void	dup_link(t_lem *lem, char *nam, char *link)
 		(tmp->lnk->size)++;
 	}
 }
+// void	dup_link(t_lem *lem, char *nam, char *)
+// {
+// 	ft_putendl_fd("dup", 2);
+// 	ft_putstr_fd(link, 2);
+// 	ft_putchar_fd(' ', 2);
+// 	ft_putendl_fd(nam, 2);
+// 	ft_putchar_fd('\n', 2);
+// 	t_lst *tmp;
+
+// 	tmp = lem->lst;
+// 	while (tmp)
+// 	{
+// 		if (ft_strcmp(tmp->name, link) == 0)
+// 		{
+// 			if (tmp->lnk->size == tmp->lnk->cap)
+// 			{
+// 				vec_in(tmp->lnk);
+// 			}
+// 			tmp->lnk->ar[tmp->lnk->size] = ft_strdup(nam);
+// 			(tmp->lnk->size)++;
+// 			return ;
+// 		}
+// 		tmp = tmp->next;
+// 	}
+// }
 
 void	split_set(t_lst *lst, char *lin, t_lem *lem)
 {
 	char	**spl;
 	t_lst	*tmp;
-
+	(void)lem;
 	tmp = lst;
 	spl = ft_split_c(lin, '-');
 	while (ft_strcmp(tmp->name, spl[0]) && tmp->next)
@@ -60,7 +85,7 @@ void	split_set(t_lst *lst, char *lin, t_lem *lem)
 		// tmp->lnk->ar[tmp->lnk->size] = ft_strdup(spl[1]);
 		// ft_putendl_fd(tmp->lnk->ar[tmp->lnk->size], 2);
 		(tmp->lnk->size)++;
-		dup_link(lem, tmp->name, spl[1]);
+		dup_link(lem, spl[0], spl[1]);
 		// dup_link(lem, tmp->name, tmp->lnk->ar[tmp->lnk->size - 1]);
 	}
 }
