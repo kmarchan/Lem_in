@@ -70,7 +70,7 @@ void					get_rooms(t_lem *lem);
 void					del_extra(t_lst *lst);
 void					get_links(t_lem *lem);
 void					find_first_step(t_lem *lem);
-void					find_path(t_lem *lem, int n);
+void					find_path(t_lem *lem);
 void					get_path(t_lem *lem);
 
 #endif
