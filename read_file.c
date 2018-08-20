@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:19:33 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/17 10:31:36 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/20 08:29:39 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,34 +34,17 @@ void	read_file(t_lem *lem)
 
 int		analyze(t_lem *lem)
 {
+	ft_putendl_fd("A", 2);
 	get_rooms(lem);
+	ft_putendl_fd("N", 2);
 	get_ants(lem);
+	ft_putendl_fd("L", 2);
 	find_begend(lem);
+	ft_putendl_fd("Y", 2);
 	get_links(lem);
+	ft_putendl_fd("Z", 2);
 	get_path(lem);
-	// ft_putstr_fd(CYN "ants = " RESET, 2);
-	// ft_putnbr_fd(lem->ant, 2);
-	// ft_putchar_fd('\n', 2);
-	// ft_putstr_fd(CYN "start = " RESET, 2);
-	// ft_putendl_fd(lem->start, 2);
-	// ft_putstr_fd(CYN "end = " RESET, 2);
-	// ft_putendl_fd(lem->end, 2);
-	// ft_putendl_fd(CYN "ROOMS:" RESET, 2);
-	// int i;
-	// while (lem->lst != NULL)
-	// {
-	// 	i = 0;
-	// 	ft_putendl_fd(lem->lst->name, 2);
-	// 	while (i < lem->lst->lnk->size)
-	// 	{
-	// 		ft_putstr_fd(lem->lst->lnk->ar[i], 2);
-	// 		ft_putchar_fd(' ', 2);
-	// 		i++;
-	// 	}
-	// 	ft_putchar_fd('\n', 2);
-	// 	lem->lst = lem->lst->next;
-	// }
-	// ft_putendl_fd(lem->end, 2);
+	ft_putendl_fd("E", 2);
 	return (0);
 }
 
