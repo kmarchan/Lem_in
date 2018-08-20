@@ -28,6 +28,7 @@ void	creatpath(t_lem *lem, char *str)
 	free(tmp);
 }
 
+#include <stdio.h>
 void set_path(t_lem *lem)
 {
 	ft_putendl_fd("SET", 2);
@@ -47,8 +48,14 @@ void set_path(t_lem *lem)
 			lst = lem->lst;
 			while (ft_strcmp(lst->name, tmp->lnk->ar[i]) != 0)
 				lst = lst->next;
+			// ft_putnbr_fd(lst->lnum, 2);
+			// ft_putchar_fd(' ', 2);
 			if (lst->lnum < score && lst->lnum != 0)
 			{
+				printf("name = %s\n", tmp->name);
+				ft_putnbr_fd(score, 2);
+				ft_putchar_fd(' ', 2);
+				ft_putendl_fd(lst->name, 2);
 				score = lst->lnum;
 				nex = lst;
 			}

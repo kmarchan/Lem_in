@@ -35,8 +35,13 @@ void	set_lnum(t_lem *lem, char *link, int num)
 void	path_next(t_lem *lem)
 {
 	t_lst	*tmp;
+	t_lst	*tmp1;
 	int		i;
 
+	tmp = lem->lst;
+	tmp1 = lem->lst;
+	while (tmp1)
+	{
 	tmp = lem->lst;
 	while (tmp)
 	{
@@ -50,6 +55,8 @@ void	path_next(t_lem *lem)
 			}
 		}
 		tmp = tmp->next;
+	}
+	tmp1 = tmp1->next; 
 	}
 }
 
