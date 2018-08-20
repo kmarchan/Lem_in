@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 08:35:53 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/20 13:53:57 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int		main(void)
 	// ft_putendl_fd("E", 2);
 	// get_path(lem);
 	// ft_putendl_fd("F", 2);
+	path(lem);
 	if (errors(lem))
 	{
 		ERROR;

@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 11:30:52 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/20 13:54:21 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void					get_links(t_lem *lem);
 void					find_first_step(t_lem *lem);
 void					find_path(t_lem *lem);
 void					get_path(t_lem *lem);
+void					path(t_lem *lem);
 
 #endif
