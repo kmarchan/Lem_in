@@ -6,7 +6,7 @@
 #    By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 13:53:38 by kmarchan          #+#    #+#              #
-#    Updated: 2018/08/20 13:39:11 by kmarchan         ###   ########.fr        #
+#    Updated: 2018/08/20 15:54:35 by kmarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ all:	$(NAME)
 
 lib: 
 	make re -C ./libft_gnl/
+	make clean -C ./libft_gnl/
 
 
 SRC= lem_in.c read_file.c memory_man.c get_ants.c get_rooms.c ft_list.c vector.c \
