@@ -6,13 +6,12 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/17 10:29:31 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/20 11:30:52 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
-# define ERROR ft_putendl_fd("Error", 2);
 # include "libft.h"
 # include "get_next_line.h"
 
@@ -24,6 +23,7 @@
 # define CYN "\x1B[36m"
 # define WHT "\x1B[37m"
 # define RESET "\x1B[0m"
+# define ERROR ft_putendl_fd(RED "Error" RESET, 2);
 
 typedef struct			s_vec
 {

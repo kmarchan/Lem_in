@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/17 10:11:42 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 08:35:49 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/20 13:37:10 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,36 +67,12 @@ void	find_path(t_lem *lem)
 			if (ft_strcmp(tmp->lnk->ar[i], lem->end) == 0)
 			{
 				tmp->lnum = 1;
-				// path_next(lem);
 			}
 			i++;
 		}
 		tmp = tmp->next;
 	}
 }
-
-// void	find_path(t_lem *lem, int n)
-// {
-// 	t_lst	*tmp;
-// 	int		i;
-
-// 	tmp = lem->lst;
-// 	while (tmp)
-// 	{
-// 		i = 0;
-// 		while (i < tmp->lnk->size)
-// 		{
-// 			if (ft_strcmp(tmp->lnk->ar[i], lem->end) == 0)
-// 			{
-// 				tmp->lnum = n;
-// 				if (ft_strcmp(tmp->name, lem->start) == 0)
-// 					lem->brek = 1;
-// 			}
-// 			i++;
-// 		}
-// 		tmp = tmp->next;
-// 	}
-// }
 
 void	get_path(t_lem *lem)
 {
