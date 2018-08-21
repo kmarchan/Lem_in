@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 13:38:50 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 15:00:05 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 17:13:30 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,6 @@ t_lst	*start(t_lem *lem)
 		tmp = tmp->next;
 	}
 	return (tmp);
-}
-
-void	print_ar(char **ar)
-{
-	int n;
-
-	n = 0;
-	while (ar[n] != '\0')
-	{
-		ft_putendl_fd(ar[n], 1);
-		n++;
-	}
-	ft_putchar('\n');
 }
 
 int		path(t_lem *lem)

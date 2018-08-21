@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 12:45:47 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 15:34:47 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 17:24:29 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ void	release_ants(t_lem *lem)
 	int	*pth;
 	int	len;
 	int	i;
-	int	j;
 
-	j = 1;
 	print_ar(lem->vec->ar);
 	len = ft_arlen(lem->route);
 	pth = (int *)ft_memalloc(sizeof(int) * len);
@@ -58,21 +56,9 @@ void	release_ants(t_lem *lem)
 					print_ant(pth[i], lem->route[i]);
 			}
 			if (ft_strcmp(lem->route[i], lem->end) == 0 && pth[i] == lem->ant)
-			{
-				ft_putchar('\n');
 				return ;
-			}
 			i--;
 		}
-		i = 1;
-		// while (i < len)
-		// {
-		// 	if (pth[i] > 0)
-		// 		print_ant(pth[i], lem->route[i]);
-		// 	// ft_putnbr_fd(pth[i], 2);
-		// 	// ft_putchar_fd(' ', 2);
-		// 	i++;
-		// }
 		ft_putchar_fd('\n', 2);
 	}
 }

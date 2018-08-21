@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:41 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 08:35:28 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 17:11:45 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,4 @@ void	get_links(t_lem *lem)
 		}
 		i++;
 	}
-	// tmp->lnk->ar[tmp->lnk->size] = NULL;
 }

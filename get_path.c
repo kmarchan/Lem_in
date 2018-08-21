@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/17 10:11:42 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 14:21:48 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 17:18:32 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,8 @@ void	set_lnum(t_lem *lem, char *link, int num)
 	tmp = lem->lst;
 	while (tmp)
 	{
-		// ft_putstr_fd(tmp->name, 2);
-		// ft_putchar_fd('	', 2);
-		// ft_putendl_fd(link, 2);
 		if (ft_strcmp(tmp->name, link) == 0 && tmp->lnum == 0)
 		{
-			// ft_putendl_fd("LNUM", 2);
 			tmp->lnum = num + 1;
 		}
 		tmp = tmp->next;
@@ -42,21 +38,21 @@ void	path_next(t_lem *lem)
 	tmp1 = lem->lst;
 	while (tmp1)
 	{
-	tmp = lem->lst;
-	while (tmp)
-	{
-		i = 0;
-		if (tmp->lnum > 0)
+		tmp = lem->lst;
+		while (tmp)
 		{
-			while (i < tmp->lnk->size)
+			i = 0;
+			if (tmp->lnum > 0)
 			{
-				set_lnum(lem, tmp->lnk->ar[i], tmp->lnum);
-				i++;
+				while (i < tmp->lnk->size)
+				{
+					set_lnum(lem, tmp->lnk->ar[i], tmp->lnum);
+					i++;
+				}
 			}
+			tmp = tmp->next;
 		}
-		tmp = tmp->next;
-	}
-	tmp1 = tmp1->next; 
+		tmp1 = tmp1->next;
 	}
 }
 
@@ -83,19 +79,7 @@ void	find_path(t_lem *lem)
 
 void	get_path(t_lem *lem)
 {
-	// int n;
-
-	// n = 2;
 	(void)lem;
-	// ft_putendl_fd("get_path", 2);
-	// ft_putendl_fd("f", 2);
 	find_path(lem);
-	// ft_putendl_fd("n", 2);
 	path_next(lem);
-	// ft_putendl_fd("e", 2);
-	// while (lem->brek == 0)
-	// {
-	// 	find_path(lem, n);
-	// 	n++;
-	// }
 }
