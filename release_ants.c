@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 12:45:47 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 13:41:22 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 15:01:16 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,85 +25,54 @@ int		ft_arlen(char **ar)
 	return (i);
 }
 
-// void	release_ants(t_lem *lem)
-// {
-// 	int	*pth;
-// 	int	len;
-// 	int i;
-// 	int j;
-
-// 	// i = 0;
-// 	j = 1;
-// 	print_ar(lem->vec->ar);
-// 	len = ft_arlen(lem->route);
-// 	pth = (int *)ft_memalloc(sizeof(int) * len);
-// 	pth[0] = lem->ant;
-// 	// ft_putnbr_fd(pth[0], 2);
-// 	ft_putchar_fd('-', 2);
-// 	ft_putnbr_fd(lem->ant, 2);
-// 	ft_putchar_fd('\n', 2);
-// 	while (pth[len] < lem->ant)
-// 	{
-// 		i = 1;
-// 		ft_putnbr_fd(pth[i], 2);
-// 		ft_putchar_fd('\n', 2);
-// 		while (i <= len)
-// 		{
-// 			if (pth[i] < pth[i] - 1)
-// 			{
-// 				pth[i]++;
-// 			}
-// 			i++;
-// 		}
-// 	}
-// 	i = 0;
-// 	while (i <= len)
-// 	{
-// 		ft_putnbr_fd(pth[i], 2);
-// 		ft_putchar_fd(' ', 2);
-// 		i++;
-// 	}
-// }
+void	print_ant(int ant, char *name)
+{
+	ft_putchar('L');
+	ft_putnbr(ant);
+	ft_putchar('-');
+	ft_putstr(name);
+	ft_putchar(' ');
+}
 
 void	release_ants(t_lem *lem)
 {
 	int	*pth;
 	int	len;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
-	// i = 0;
 	j = 1;
 	print_ar(lem->vec->ar);
 	len = ft_arlen(lem->route);
-	pth = (int *)ft_memalloc(sizeof(int) * len);
+	pth = (int *)ft_memalloc(sizeof(int) * len - 1);
 	pth[0] = lem->ant;
-	// ft_putnbr_fd(pth[0], 2);
-	// ft_putchar_fd('-', 2);
-	// ft_putnbr_fd(lem->ant, 2);
-	// ft_putchar_fd('\n', 2);
-	while (pth[len] < lem->ant)
+	while (pth[len - 1] < lem->ant)
 	{
-		i = len;
-		// ft_putnbr_fd(pth[i], 2);
-		// ft_putchar_fd('\n', 2);
-		while (i)
+		i = len - 1;
+		while (i > 0)
 		{
 			if (pth[i - 1] > pth[i])
 			{
-				ft_putendl_fd("IF", 2);
 				pth[i]++;
+			}
+			if (pth[i] > 0 && i > 0)
+				print_ant(pth[i], lem->route[i]);
+			if (ft_strcmp(lem->route[i], lem->end) == 0 && pth[i] == lem->ant)
+			{
+				ft_putchar('\n');
+				return ;
 			}
 			i--;
 		}
-		i = 0;
-	while (i <= len)
-	{
-		ft_putnbr_fd(pth[i], 2);
-		ft_putchar_fd(' ', 2);
-		i++;
-	
+		i = 1;
+		// while (i < len)
+		// {
+		// 	if (pth[i] > 0)
+		// 		print_ant(pth[i], lem->route[i]);
+		// 	// ft_putnbr_fd(pth[i], 2);
+		// 	// ft_putchar_fd(' ', 2);
+		// 	i++;
+		// }
+		ft_putchar_fd('\n', 2);
 	}
-	}
-	
 }

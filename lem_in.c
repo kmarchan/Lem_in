@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 13:05:39 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 14:58:11 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		errors(t_lem *lem)
 int		main(void)
 {
 	t_lem	*lem;
-	t_lst	*hold;
+	// t_lst	*hold;
 
 	lem = initialise();
 	read_file(lem);
@@ -68,36 +68,36 @@ int		main(void)
 		exit(0);
 	}
 	release_ants(lem);
-	int i;
-	ft_putstr_fd(CYN "ants = " RESET, 2);
-	ft_putnbr_fd(lem->ant, 2);
-	ft_putchar_fd('\n', 2);
-	ft_putstr_fd(CYN "start = " RESET, 2);
-	ft_putendl_fd(lem->start, 2);
-	ft_putstr_fd(CYN "end = " RESET, 2);
-	ft_putendl_fd(lem->end, 2);
-	ft_putendl_fd(CYN "ROOMS:" RESET, 2);
-	hold = lem->lst;
-	while (lem->lst)
-	{
-		i = 0;
-		ft_putstr_fd(CYN, 2);
-		ft_putendl_fd(lem->lst->name, 2);
-		ft_putstr_fd(RESET, 2);
-		ft_putstr_fd(MAG, 2);
-		ft_putnbr_fd(lem->lst->lnum, 2);
-		ft_putstr_fd(RESET, 2);
-		while (i < lem->lst->lnk->size)
-		{
-			ft_putstr_fd(lem->lst->lnk->ar[i], 2);
-			ft_putchar_fd(' ', 2);
-			i++;
-		}
-		ft_putchar_fd('\n', 2);
-		lem->lst = lem->lst->next;
-	}
+	// int i;
+	// ft_putstr_fd(CYN "ants = " RESET, 2);
+	// ft_putnbr_fd(lem->ant, 2);
+	// ft_putchar_fd('\n', 2);
+	// ft_putstr_fd(CYN "start = " RESET, 2);
+	// ft_putendl_fd(lem->start, 2);
+	// ft_putstr_fd(CYN "end = " RESET, 2);
 	// ft_putendl_fd(lem->end, 2);
-	lem->lst = hold;
+	// ft_putendl_fd(CYN "ROOMS:" RESET, 2);
+	// hold = lem->lst;
+	// while (lem->lst)
+	// {
+	// 	i = 0;
+	// 	ft_putstr_fd(CYN, 2);
+	// 	ft_putendl_fd(lem->lst->name, 2);
+	// 	ft_putstr_fd(RESET, 2);
+	// 	ft_putstr_fd(MAG, 2);
+	// 	ft_putnbr_fd(lem->lst->lnum, 2);
+	// 	ft_putstr_fd(RESET, 2);
+	// 	while (i < lem->lst->lnk->size)
+	// 	{
+	// 		ft_putstr_fd(lem->lst->lnk->ar[i], 2);
+	// 		ft_putchar_fd(' ', 2);
+	// 		i++;
+	// 	}
+	// 	ft_putchar_fd('\n', 2);
+	// 	lem->lst = lem->lst->next;
+	// }
+	// ft_putendl_fd(lem->end, 2);
+	// lem->lst = hold;
 	// n = 0;
 	
 	// while (lem->vec->ar[n] != NULL)
