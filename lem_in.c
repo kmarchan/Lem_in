@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 13:53:57 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 10:26:12 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,13 @@ void	free_all(t_lem *lem)
 
 int		errors(t_lem *lem)
 {
+	t_lst *tmp;
+
+	tmp = start(lem);
 	if (lem->ant < 1 || lem->end == NULL || lem->start == NULL)
 		return (1);
+	if (tmp->lnum < 1 || tmp->lnk->size == 0)
+		return (0);
 	return (0);
 }
 
@@ -52,23 +57,17 @@ int		main(void)
 {
 	t_lem	*lem;
 	t_lst	*hold;
-	// int		n;
 
 	lem = initialise();
 	read_file(lem);
-	// ft_putendl_fd("C", 2);
 	get_ants(lem);
-	// ft_putendl_fd("D", 2);
 	analyze(lem);
-	// ft_putendl_fd("E", 2);
-	// get_path(lem);
-	// ft_putendl_fd("F", 2);
-	path(lem);
-	if (errors(lem))
+	if (!path(lem) || errors(lem))
 	{
 		ERROR;
 		exit(0);
 	}
+	
 	int i;
 	ft_putstr_fd(CYN "ants = " RESET, 2);
 	ft_putnbr_fd(lem->ant, 2);
