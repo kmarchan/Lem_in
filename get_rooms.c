@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:13 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 17:48:22 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 18:35:00 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,22 @@ void	find_begend(t_lem *lem)
 	}
 }
 
+void	set_room(t_lem **lem, t_lst **hold, int i)
+{
+	char	**temp;
+
+	(*lem)->brek = 1;
+	if ((*lem)->vec->ar[i + 1] != NULL)
+		(*hold)->next = ft_lstnew();
+	temp = ft_split((*lem)->vec->ar[i]);
+	(*hold)->name = ft_strdup(temp[0]);
+	*hold = (*hold)->next;
+	free_ar(temp, 3);
+}
+
 int		get_rooms(t_lem *lem)
 {
 	int		i;
-	char	**temp;
 	t_lst	*hold;
 	t_lst	*hold2;
 
@@ -70,15 +82,7 @@ int		get_rooms(t_lem *lem)
 	{
 		if (ft_word_count(lem->vec->ar[i]) == 3 &&
 		lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
-		{
-			lem->brek = 1;
-			if (lem->vec->ar[i + 1] != NULL)
-				hold->next = ft_lstnew();
-			temp = ft_split(lem->vec->ar[i]);
-			hold->name = ft_strdup(temp[0]);
-			hold = hold->next;
-			free_ar(temp, 3);
-		}
+			set_room(&lem, &hold, i);
 		i++;
 	}
 	if (lem->brek == 0)
