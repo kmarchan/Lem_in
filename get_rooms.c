@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:13 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/17 07:30:40 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 16:38:18 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,16 @@ void	find_begend(t_lem *lem)
 	}
 }
 
-void	get_rooms(t_lem *lem)
+int		get_rooms(t_lem *lem)
 {
 	int		i;
+	int		e;
 	char	**temp;
 	t_lst	*hold;
 	t_lst	*hold2;
 
 	i = 0;
+	e = 0;
 	hold = lem->lst;
 	hold = ft_lstnew();
 	hold2 = hold;
@@ -71,6 +73,7 @@ void	get_rooms(t_lem *lem)
 		if (ft_word_count(lem->vec->ar[i]) == 3 &&
 		lem->vec->ar[i][0] != 'L' && lem->vec->ar[i][0] != '#')
 		{
+			e = 1;
 			if (lem->vec->ar[i + 1] != NULL)
 				hold->next = ft_lstnew();
 			temp = ft_split(lem->vec->ar[i]);
@@ -80,6 +83,9 @@ void	get_rooms(t_lem *lem)
 		}
 		i++;
 	}
+	if (!e)
+		return (0);
 	lem->lst = hold2;
 	del_extra(lem->lst);
+	return (1);
 }

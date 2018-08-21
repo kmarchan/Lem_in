@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 14:58:11 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 16:57:46 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,36 @@ void	free_all(t_lem *lem)
 	free(lem);
 }
 
-int		errors(t_lem *lem)
+int		errors0(t_lem *lem)
+{
+	if (lem->ant < 1)
+	{
+		ft_putendl_fd(RED "Invalid Ants" RESET, 2);
+		return (1);
+	}
+	return (0);
+}
+
+int		errors1(t_lem *lem)
+{
+	if (lem->end == NULL || lem->start == NULL)
+	{
+		ft_putendl_fd(RED "Invalid Start or End" RESET, 2);
+		return (1);
+	}
+	return (0);
+}
+
+int		errors2(t_lem *lem)
 {
 	t_lst *tmp;
 
 	tmp = start(lem);
-	if (lem->ant < 1 || lem->end == NULL || lem->start == NULL)
-		return (1);
 	if (tmp->lnum < 1 || tmp->lnk->size == 0)
+	{
+		ft_putendl_fd(RED "Invalid Start or End" RESET, 2);
 		return (0);
+	}
 	return (0);
 }
 
@@ -61,11 +82,21 @@ int		main(void)
 	lem = initialise();
 	read_file(lem);
 	get_ants(lem);
-	analyze(lem);
-	if (!path(lem) || errors(lem))
+	if (errors0(lem))
 	{
-		ERROR;
+		exit (0);
+	}
+	analyze(lem);
+	// if (!path(lem) || errors(lem))
+	if (errors1(lem))
+	{
+		// ERROR;
 		exit(0);
+	}
+	get_path(lem);
+	if (errors2(lem) || !path(lem))
+	{
+		exit (0);
 	}
 	release_ants(lem);
 	// int i;

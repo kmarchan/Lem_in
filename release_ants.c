@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 12:45:47 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 15:01:16 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 15:34:47 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	release_ants(t_lem *lem)
 	j = 1;
 	print_ar(lem->vec->ar);
 	len = ft_arlen(lem->route);
-	pth = (int *)ft_memalloc(sizeof(int) * len - 1);
+	pth = (int *)ft_memalloc(sizeof(int) * len);
 	pth[0] = lem->ant;
 	while (pth[len - 1] < lem->ant)
 	{
@@ -54,9 +54,9 @@ void	release_ants(t_lem *lem)
 			if (pth[i - 1] > pth[i])
 			{
 				pth[i]++;
+				if (pth[i] > 0 && i > 0)
+					print_ant(pth[i], lem->route[i]);
 			}
-			if (pth[i] > 0 && i > 0)
-				print_ant(pth[i], lem->route[i]);
 			if (ft_strcmp(lem->route[i], lem->end) == 0 && pth[i] == lem->ant)
 			{
 				ft_putchar('\n');

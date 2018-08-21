@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:19:33 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/20 14:22:10 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 16:57:10 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	read_file(t_lem *lem)
 int		analyze(t_lem *lem)
 {
 	// ft_putendl_fd("A", 2);
-	get_rooms(lem);
+	if (!get_rooms(lem))
+		return (0);
 	// ft_putendl_fd("N", 2);
 	get_ants(lem);
 	// ft_putendl_fd("L", 2);
@@ -51,8 +52,8 @@ int		analyze(t_lem *lem)
 	// ft_putendl_fd("Y", 2);
 	get_links(lem);
 	// ft_putendl_fd("Z", 2);
-	get_path(lem);
+	// get_path(lem);
 	// ft_putendl_fd("E", 2);
-	return (0);
+	return (1);
 }
 
