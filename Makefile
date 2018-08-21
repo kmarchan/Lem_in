@@ -6,7 +6,7 @@
 #    By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 13:53:38 by kmarchan          #+#    #+#              #
-#    Updated: 2018/08/21 10:16:12 by kmarchan         ###   ########.fr        #
+#    Updated: 2018/08/21 12:47:33 by kmarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,7 @@ lib:
 
 
 SRC= lem_in.c read_file.c memory_man.c get_ants.c get_rooms.c ft_list.c vector.c \
-	get_links.c get_path.c path.c
-
-
+	get_links.c get_path.c path.c release_ants.c
 
 OBJ=	$(SRC:.c=.o)
 

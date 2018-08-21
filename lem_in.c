@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 10:26:12 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:05:39 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int		main(void)
 		ERROR;
 		exit(0);
 	}
-	
+	release_ants(lem);
 	int i;
 	ft_putstr_fd(CYN "ants = " RESET, 2);
 	ft_putnbr_fd(lem->ant, 2);

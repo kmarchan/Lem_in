@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 10:25:05 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/21 13:05:20 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_lst					*ft_lstnew(void);
 void					get_rooms(t_lem *lem);
 void					del_extra(t_lst *lst);
 void					get_links(t_lem *lem);
-void					find_first_step(t_lem *lem);
+// void					find_first_step(t_lem *lem);
 void					find_path(t_lem *lem);
 void					get_path(t_lem *lem);
 
@@ -79,6 +79,11 @@ int						find_val(t_lem *lem, char *name);
 t_lst					*stone(t_lem *lem, char *name);
 t_lst					*set_stone(t_lem *lem, t_lst *lst);
 t_lst					*start(t_lem *lem);
+
+void					release_ants(t_lem *lem);
+void					print_ar(char **ar);
+
+
 // void					path(t_lem *lem);
 
 #endif
