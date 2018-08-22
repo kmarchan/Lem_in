@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 17:05:32 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/22 08:10:48 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int						ft_lstlen(t_lst *lst);
 t_lst					*ft_lstnew(void);
 int						get_rooms(t_lem *lem);
 void					del_extra(t_lst *lst);
-void					get_links(t_lem *lem);
+int						get_links(t_lem *lem);
 void					find_path(t_lem *lem);
 void					get_path(t_lem *lem);
 
@@ -81,5 +81,6 @@ t_lst					*start(t_lem *lem);
 
 void					release_ants(t_lem *lem);
 void					print_ar(char **ar);
+int						ft_arlen(char**ar);
 
 #endif

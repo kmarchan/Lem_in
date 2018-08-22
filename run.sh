@@ -1,5 +1,3 @@
-echo "\x1B[32mhas_comments\x1B[0m"
-./lem-in <maps/has_comments.map
 echo "\x1B[32minvalid_ant 1\x1B[0m"
 ./lem-in <maps/invalid_ants1.map
 echo "\x1B[32minvalid_ant 2\x1B[0m"
@@ -28,10 +26,14 @@ echo "\x1B[32mno_end\x1B[0m"
 ./lem-in <maps/noend.map
 echo "\x1B[32mno_start\x1B[0m"
 ./lem-in <maps/nostart.map
-echo "\x1B[32mcmd\x1B[0m"
-./lem-in <maps/othervalidcmd.map
+echo "\x1B[32mInvalid_link\x1B[0m"
+./lem-in <maps/invalid_link.map
 echo "\x1B[32mpoor edge\x1B[0m"
 ./lem-in <maps/pooredge.map
+echo "\x1B[32mhas_comments\x1B[0m"
+./lem-in <maps/has_comments.map
+echo "\x1B[32mcmd\x1B[0m"
+./lem-in <maps/othervalidcmd.map
 echo "\x1B[32msubject-1.map\x1B[0m"
 ./lem-in <maps/subject-1.map
 echo "\x1B[32msubject-2.map\x1B[0m"

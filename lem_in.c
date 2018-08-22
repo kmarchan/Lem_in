@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 17:23:58 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/22 07:45:16 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		errors2(t_lem *lem)
 	tmp = start(lem);
 	if (tmp->lnum < 1 || tmp->lnk->size == 0)
 	{
-		ft_putendl_fd(RED "Invalid Start or End" RESET, 2);
+		ft_putendl_fd(RED "Invalid Map" RESET, 2);
 		return (0);
 	}
 	return (0);

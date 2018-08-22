@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:41 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 17:11:45 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/22 10:08:38 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,23 @@ void	dup_link(t_lem *lem, char *nam, char *link)
 	}
 }
 
-void	split_set(t_lst *lst, char *lin, t_lem *lem)
+int		no_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (ft_isspace(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int		split_set(t_lst *lst, char *lin, t_lem *lem)
 {
 	char	**spl;
 	t_lst	*tmp;
@@ -56,6 +72,8 @@ void	split_set(t_lst *lst, char *lin, t_lem *lem)
 	(void)lem;
 	tmp = lst;
 	spl = ft_split_c(lin, '-');
+	if (!no_spaces(spl[0]) || !no_spaces(spl[1]))
+		return (0);
 	while (ft_strcmp(tmp->name, spl[0]) && tmp->next)
 	{
 		tmp = tmp->next;
@@ -70,9 +88,10 @@ void	split_set(t_lst *lst, char *lin, t_lem *lem)
 		(tmp->lnk->size)++;
 		dup_link(lem, spl[0], spl[1]);
 	}
+	return (1);
 }
 
-void	get_links(t_lem *lem)
+int		get_links(t_lem *lem)
 {
 	t_lst	*tmp;
 	int		i;
@@ -85,8 +104,10 @@ void	get_links(t_lem *lem)
 		if (ft_word_count(lem->vec->ar[i]) == 1 &&
 		ft_strchr(lem->vec->ar[i], '-') && lem->vec->ar[i][0] != '#')
 		{
-			split_set(tmp, lem->vec->ar[i], lem);
+			if (!split_set(tmp, lem->vec->ar[i], lem))
+				return (0);
 		}
 		i++;
 	}
+	return (1);
 }
