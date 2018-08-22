@@ -6,7 +6,7 @@
 #    By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/24 13:53:38 by kmarchan          #+#    #+#              #
-#    Updated: 2018/08/21 12:47:33 by kmarchan         ###   ########.fr        #
+#    Updated: 2018/08/22 10:49:25 by kmarchan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=	lem-in
 
 INCLUDES= -I ./libft_gnl/includes
 
-all:	$(NAME)
+all:	lib $(NAME)
 
 lib: 
 	make re -C ./libft_gnl/

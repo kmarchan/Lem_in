@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:39:13 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/21 18:35:00 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/22 10:45:20 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ void	find_begend(t_lem *lem)
 		}
 		else if (ft_strcmp(lem->vec->ar[i], "##end") == 0 &&
 		ft_word_count(lem->vec->ar[i + 1]) == 3 && lem->vec->ar[i + 1] != NULL)
-		{
 			lem->end = set_point(lem->vec->ar[i + 1]);
-		}
+		else if (ft_strcmp(lem->vec->ar[i], "##colour") == 0 ||
+		ft_strcmp(lem->vec->ar[i], "##color") == 0)
+			lem->col = 1;
 		i++;
 	}
 }

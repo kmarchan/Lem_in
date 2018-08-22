@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 13:37:49 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/22 07:45:16 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/22 10:14:00 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_lem	*initialise(void)
 	lem->fd = 0;
 	lem->ant = 0;
 	lem->brek = 0;
+	lem->col = 0;
 	lem->vec->size = 0;
 	lem->vec->cap = 0;
 	return (lem);

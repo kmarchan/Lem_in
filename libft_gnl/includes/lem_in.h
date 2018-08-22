@@ -6,7 +6,7 @@
 /*   By: kmarchan <kmarchan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 08:21:38 by kmarchan          #+#    #+#             */
-/*   Updated: 2018/08/22 08:10:48 by kmarchan         ###   ########.fr       */
+/*   Updated: 2018/08/22 10:13:44 by kmarchan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct			s_lem
 	int					fd;
 	int					ant;
 	int					brek;
+	int					col;
 	char				*start;
 	char				*end;
 	char				**route;
