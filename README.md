@@ -10,8 +10,8 @@ is irrelevant.
 <img width="326" alt="screen shot 2018-09-12 at 10 44 22" src="https://user-images.githubusercontent.com/36439765/45413129-b4c5e900-b678-11e8-9500-5a3233fb55ce.png">
 
 Above is an example of a valid map.
-A big part of this project was the error management. So ckecking for invalis maps, inputs, number of ants and other inticacies took 
-some time. once all the error checking was done we could move the ants. 
+A big part of this project was the error management. So checking for invalid maps, inputs, number of ants and other intricacies took 
+some time. Once all the error checking was done we could move the ants. 
 Below shows the output by lem-in first giving back the map, comments and commands then showing how the ants got across the map.
 The colour was a bonus that I had built in if the ##colour or ##color commands were present.
 
