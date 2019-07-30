@@ -2,6 +2,8 @@
 <img width="592" alt="screen shot 2018-09-12 at 10 35 58" src="https://user-images.githubusercontent.com/36439765/45412666-8b588d80-b677-11e8-8bfa-273747258fd9.png">
 Summary: This project is meant to make you code an ant farm manager.
 
+**EDIT:** The instructions for this project have since been changed meaning that my implementation would no longer pass. I used a overcomplicated method of storing the information which made the processing speed slow and it used only one path for all ants rather than using multiple paths to get to the end point faster. 
+
 Lem-in was descibed in the brief as being a Hex-sym. A simulation of the movement of ants but was essentially a path finding task
 as all the ants started in one room and needed to get to the end room without traffic jams meaning that there could only be one ant per
 room at any given time and each ant could only move once per turn. I don't think ive ever heard of a real ant that waits its turn, that 
